@@ -428,7 +428,9 @@ console.log('Should log undefined, because function returned nothing:', result2)
 
 console.log("#84=============================================================")
 
-// Your function should create an isPresent variable and assign it to a comparison between the object's value at the given key and undefined, and return the isPresent variable.
+// Your function should create an isPresent variable and assign it to a comparison
+// between the object's value at the given key and undefined, and return the
+// isPresent variable.
 
 function isPropertyPresent(object, key) {
   // create an isPresent variable
@@ -456,9 +458,270 @@ var key2 = 'cut';
 var result2 = isPropertyPresent(object2, key2);
 console.log('should log true:', result2);
 
-console.log("#85=============================================================")
+console.log("#Real 84=============================================================")
+
+// Your function should use an if statement to determine if the input string
+// is both long enough, and not too long, and if it is, should return the string
+// 'Password length is valid'. 
+
+function validLengthPassword(password) {
+  // if password length is greater than 4 and less than 15
+    // return 'Password length is valid'
+    if (password.length > 4 && password.length < 15) {
+      return 'Password length is valid'
+    } 
+}
+
+
+var result1 = validLengthPassword('passwordyfurdy');
+console.log('should log "Password length is valid":', result1);
+
+var result2 = validLengthPassword('pass');
+console.log('Should log undefined, because function returned nothing:', result2);
+
+var result3 = validLengthPassword('this is clearly too long of a password');
+console.log('Should log undefined, because function returned nothing:', result3);
+
+
+console.log("#Real 85=============================================================")
+
+// Your function should use an if statement to determine if the
+// agent to search for is present within the list of agents, and
+// if it is, should return the string '{agentToSearchFor} is
+// present within Agent list', where {agentToSearchFor} has the
+// value of the argument the function is called on.
+
+// Your function should use an if statement to determine if the
+// agent to search for is present within the list of agents, and
+// if it is, should return the string '{agentToSearchFor} is
+// present within Agent list', where {agentToSearchFor} has the
+// value of the argument the function is called on.
+
+function findAgent(agentList, agentToSearchFor) {
+  // if agentToSearchFor is present within agentList
+    // return '{agentToSearchFor} is present with Agent list'
+    if (agentList.indexOf(agentToSearchFor) !== -1) {
+      return agentToSearchFor + ' is present within Agent list'
+    }
+}
+
+var result1 = findAgent(['001', '005', '007', '009'], '007');
+console.log('should log "007 is present within Agent list":', result1);
+
+var result2 = findAgent(['tiny', 'teeny', 'eeny', 'meany'], 'teeny');
+console.log('should log "teeny is present within Agent list":', result2);
+
+var result3 = findAgent(['red', 'blue', 'green'], 'orange');
+console.log('Should log undefined, because function returned nothing:', result3);
+
+
 console.log("#86=============================================================")
+
+// Your function should use an if statement to determine if the team in question
+// has surpassed their goal of 5 reports, and if they have, should return the
+// string '{teamName} has surpassed goal with {number_of_reports_for_team} reports',
+// where {teamName} has the value of the second argument the function is called on,
+// and {number_of_reports_for_team} is the number of reports in the inputted object
+// argument for {teamName}.
+
+function generateReportSummary(reportTotals, teamName) {
+  // if teamName's report total is greater than 5
+    // return '{teamName} surpassed goal with {number_of_reports_for_team} reports'
+  if (reportTotals[teamName] > 5) {
+    return teamName + " has surpassed goal with " + reportTotals[teamName] + " reports"
+  }
+}
+
+var result1 = generateReportSummary({a_team: 12, b_team: 7, c_team: 0}, 'b_team');
+console.log('should log "b_team has surpassed goal with 7 reports":', result1);
+
+var result2 = generateReportSummary({blue: 18, red: 8, green: 12}, 'blue');
+console.log('should log "blue has surpassed goal with 18 reports":', result2);
+
+var result3 = generateReportSummary({gamma: 1, epsilon: 3, alpha: 4, bravo: 17}, 'alpha');
+console.log('Should log undefined, because function returned nothing:', result3);
+
 console.log("#87=============================================================")
+
+// Your function should use an if else statement to determine if the input parameter is truthy, and if it is, should return the string 'Input is truthy', or, if the input parameter is falsy, should return the string 'Input is falsy'.
+
+function isItTruthy(param) {
+  // if param is truthy
+    // return 'Input is truthy'
+  // otherwise
+    // return 'Input is falsy'
+    if  (param ? 'truthy' : 'falsy' === 'truthy') {
+      return 'Input is truthy'   
+    } else {
+      return 'Input is falsy'
+    }
+}
+
+var result1 = isItTruthy('anything');
+console.log('should log "Input is truthy":', result1);
+
+var result2 = isItTruthy();
+console.log('should log "Input is falsy":', result2);
+
+var result3 = isItTruthy("");
+console.log('should log "Input is falsy":', result3);
+
+var result4 = isItTruthy(false);
+
 console.log("#88=============================================================")
+
+// Your function should use an if else statement to determine if there are both more than 8 dogs and fewer than 9 cats, and if there are, should return the string 'number of cats and dogs is acceptable', and if not, should return the string 'number of cats or dogs is not acceptable'.
+
+function balancePets(dogs, cats) {
+  // if there are more than 8 dogs and fewer than 9 cats
+    // return 'number of cats and dogs is acceptable'
+  // otherwise
+    // return 'number of cats or dogs is not acceptable'
+  if (dogs > 8 && cats < 9) {
+    return 'number of cats and dogs is acceptable'
+  } else {
+    return 'number of cats or dogs is not acceptable'
+  }
+}
+
+var result1 = balancePets(9, 8);
+console.log('should log "number of cats and dogs is acceptable":', result1);
+
+var result2 = balancePets(7, 12);
+console.log('should log "number of cats or dogs is not acceptable":', result2);
+
+var result3 = balancePets(7, 7);
+console.log('should log "number of cats or dogs is not acceptable":', result3);
+
+var result4 = balancePets(5, 14);
+console.log('should log "number of cats or dogs is not acceptable":', result4);
+
 console.log("#89=============================================================")
+
+// Your function should use an if else statement to determine if the input
+// string is long enough, and if it is, should return the string 'Password is
+// long enough', and if it is not, should return the string 'Please enter a
+// password of at least 9 characters'.
+
+function passwordLongEnough(password) {
+  // if password length is greater than 8
+    // return 'Password is long enough'
+  // otherwise
+    // return 'Please enter a password of at least 9 characters'
+  if (password.length > 8) {
+    return 'Password is long enough'
+  } else {
+    return 'Please enter a password of at least 9 characters'
+  }
+}
+
+var result1 = passwordLongEnough('passafassaword');
+console.log('should log "Password is long enough":', result1);
+
+var result2 = passwordLongEnough('wordpass');
+console.log('Should log "Please enter a password of at least 9 characters":', result2);
+
 console.log("#90=============================================================")
+
+// Your function should use an if else statement to determine if the ingredient to search for is present within the list of ingredients, and if it is, should return the string '{ingredientToSearchFor} is on the list', and if not, should return the string '{ingredientToSearchFor} is not on the list', where {ingredientToSearchFor} has the value of the argument the function is called on. 
+
+function findIngredient(ingredientList, ingredientToSearchFor) {
+  // if ingredientToSearchFor is present within ingredientList
+    // return '{ingredientToSearchFor} is on the list'
+  // otherwise
+    // return '{ingredientToSearchFor} is not on the list'
+  if (ingredientList.indexOf(ingredientToSearchFor) === -1) {
+    return ingredientToSearchFor + " is not on the list"
+  } else {
+    return ingredientToSearchFor + " is on the list"
+  }
+}
+
+var result1 = findIngredient(['flour', 'butter', 'sugar', 'eggs'], 'sugar');
+console.log('should log "sugar is on the list":', result1);
+
+var result2 = findIngredient(['milk', 'cereal', 'fruit'], 'pop-tarts');
+console.log('should log "pop-tarts is not on the list":', result2);
+
+console.log("#91=============================================================")
+
+// Your function should use an if else statement to determine if the totals of
+// bananas and strawberries are sufficient, and if they are, should return the
+// string 'We have enough fruit, with ' + {totalBananas} + ' bananas, and ' +
+// {totalStrawberries} + ' strawberries', where {totalBananas} and {totalStrawberries}
+// are the numbers of each fruit in the fruit totals object. If they are not, your
+// function should return the string 'We do not have enough of both fruits'.
+
+function measureRequiredFruit(fruitTotals) {
+  // if there are more than 3 bananas and more than 10 strawberries
+    // return 'We have enough fruit, with {totalBananas} bananas, and {totalStrawberries} strawberries'
+  // otherwise
+    // return 'We do not have enough of both fruits'
+  if (fruitTotals['bananas'] > 3 && fruitTotals['strawberries'] > 10) {
+    return 'We have enough fruit, with ' +  fruitTotals['bananas'] + ' bananas, and ' + fruitTotals['strawberries'] + ' strawberries'
+  } else {
+    return 'We do not have enough of both fruits'
+  }
+}
+
+var result1 = measureRequiredFruit({bananas: 4, strawberries: 12});
+console.log('should log "We have enough fruit, with 4 bananas, and 12 strawberries":', result1);
+
+var result2 = measureRequiredFruit({bananas: 5, strawberries: 15});
+console.log('should log "We have enough fruit, with 5 bananas, and 15 strawberries":', result2);
+
+var result3 = measureRequiredFruit({bananas: 2, strawberries: 12});
+console.log('should log "We do not have enough of both fruits":', result3);
+
+var result4 = measureRequiredFruit({bananas: 5, strawberries: 8});
+console.log('should log "We do not have enough of both fruits":', result4);
+
+var result5 = measureRequiredFruit({bananas: 3, strawberries: 9});
+console.log('should log "We do not have enough of both fruits":', result5);
+
+
+console.log("#92=============================================================")
+
+console.log("#93=============================================================")
+
+console.log("#94=============================================================")
+
+console.log("#95=============================================================")
+console.log("#96=============================================================")
+console.log("#97=============================================================")
+console.log("#98=============================================================")
+console.log("#99=============================================================")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
