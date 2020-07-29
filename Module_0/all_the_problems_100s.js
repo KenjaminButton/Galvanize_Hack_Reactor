@@ -453,13 +453,137 @@ generateCombinations([1, 2], ['buckle', 'my', 'shoe']);
   // 2 shoe
 
 console.log("#114=============================================================")
+
+/*
+Write a function called "filterOddElements".
+Given an array of numbers, "filterOddElements" returns an array containing only
+the odd numbers of the given array. If the input array contains no odd
+numbered elements, your function should return an empty array.
+
+var output = filterOddElements([1, 2, 3, 4, 5]);
+console.log(output); // --> [1, 3, 5]
+*/
+
+function filterOddElements(array) {
+  var new_array = []
+  for (i=0; i <= array.length; i=i+2) {
+    new_array.push(array[i])
+  }
+
+  return new_array
+}
+
+var output = filterOddElements([1, 2, 3, 4, 5]);
+console.log(output); // --> [1, 3, 5]
+
 console.log("#115=============================================================")
+
+// Write a function called "computeSumOfAllElements".
+// Given an array of numbers, "computeSumOfAllElements" returns the sum of all
+// the elements in the given array. If input array is empty, your function
+// should return 0.
+
+function computeSumOfAllElements(array) {
+    let sum = 0
+
+    for(let j = 0; j < array.length; j++) {
+        sum += array[j]
+    }
+    return sum
+}
+
+var result1 = computeSumOfAllElements([1, 2, 3]);
+console.log('should log 6:', result1);
+
+var result2 = computeSumOfAllElements([]);
+console.log('should log 0:', result2);
+
+
 console.log("#116=============================================================")
+
+// Write a function called "computeAverageOfNumbers".
+// Given an array of numbers, "computeAverageOfNumbers" returns their average.
+// If input array is empty, your function should return 0.
+
+function computeAverageOfNumbers(array) {
+  var sum = 0
+  if (array.length <= 0) {
+    return 0
+  }
+
+  for (var z=0; z<=array.length; z++) {
+    sum += z
+  }
+  return (sum/array.length)
+}
+
+
+var input1 = [1,2,3,4,5];
+var result1 = computeAverageOfNumbers(input1);
+console.log('should log 3:', result1);
+
+var input2 = [];
+var result2 = computeAverageOfNumbers(input2);
+console.log('should log 0:', result2);
+
+
+
 console.log("#117=============================================================")
+
+/*
+We are going to debug a function that takes in an object, and a target value. This function will iterate over the object's values, and attempt to locate the target value. If the value is found, the function should return the name of the key where the value in question is located, and if not, the function should return -1. Below is an example of the code running, assuming that you will have debugged the described function: keyOfObjectValue:
+*/
+
+function keyOfObjectValue(object, target) {
+  for (var key in object) {
+    if (object[key] === target) {
+      return target;
+    } else {
+      return -1;
+    }
+  }
+}
+
+var result1 = keyOfObjectValue({cucumbers: 14, carrots: 20, peas: 400}, 20);
+console.log('should log "carrots":', result1);
+
+var result2 = keyOfObjectValue({name: 'Bruce Wayne', hero: 'Batman', city: 'Gotham'}, 'Superman');
+console.log('should log -1:', result2);
+
 console.log("#118=============================================================")
+
+/* We are going to debug a function that takes in an array of numbers. This function will iterate over the array's number elements, and return a count representing the number of elements whose value is greater than 40. If there are no values above 40, then the function should return 0. Below is an example of the code running, assuming that you will have debugged the described function: getElementsAbove40:
+*/
+
+function getElementsAbove40(numbers) {
+  var count = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    
+    if (numbers[i] > 40) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+var result1 = getElementsAbove40([1, 42, 5, 314, 2, 89]);
+console.log('should log 3:', result1);
+
+var result2 = getElementsAbove40([1, 4, 3, 2, 6]);
+console.log('should log 0:', result2);
+
+
 console.log("#119=============================================================")
 console.log("#120=============================================================")
 console.log("#121=============================================================")
+
+
+
+
+
+
+
 
 
 
