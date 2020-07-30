@@ -575,10 +575,99 @@ console.log('should log 0:', result2);
 
 
 console.log("#119=============================================================")
+
+
+function createSentence(words) {
+  var sentence = "";
+  for (var i=0; i<words.length; i++) {
+    if (i === words.length -1) {
+      sentence += words[i] + '.'
+    } else {
+      sentence += words[i] + ' '
+    }
+  } return sentence;
+}
+
+
+// function createSentence(words) {
+//   var sentence = "";
+//   for (var i = 0; i < words.length; i++) {
+//     // hint: does this line need to happen every iteration?
+//     sentence += words[i] + ' ';
+//     if (i === words.length - 1) {
+//         sentence += '.';
+//     }
+//   }
+//   return sentence
+// }
+
+var result1 = createSentence(['I', 'am', 'worth', 'it']);
+console.log('should log "I am worth it.":', result1);
+
+var result2 = createSentence(['My', 'problems', 'matter']);
+console.log('should log "My problems matter.":', result2);
+
 console.log("#120=============================================================")
+
+// Write a function called "countWords".
+// Given a string (words separated by spaces), "countWords" returns an object
+// where each key is a word in the given string, with its value being how many
+// times that word appeared in the given string. If given an empty string, your
+// function should return an empty object.
+
+function countWords(stringOfWords) {
+  // your code here
+  var count = {};
+  var array = stringOfWords.split(' ');
+  if (stringOfWords === '') {
+    return {};
+  }
+
+  for (var i=0; i<array.length; i++) {
+    if (count[array[i]] === undefined) {
+      count[array[i]] = 1;
+    }
+  else {
+    count[array[i]] += 1;
+    }
+  }
+  return count;
+}
+
+var result1 = countWords('ask a bunch get a bunch');
+console.log('should log "{ask: 1, a: 2, bunch: 2, get: 1}":', result1);
+
+var result2 = countWords('');
+console.log('should log "{}":', result2);
+
 console.log("#121=============================================================")
 
+// Write a function called "countAllCharacters".
+// Given a string of characters, "countAllCharacters" returns an object where each key is a character in the given string, with its value being how many times that character appeared in the given string. If given an empty string, your function should return an empty object.
 
+function countAllCharacters(string) {
+  // your code here
+  var count = {};
+  var array = string.split('')
+  // return array;
+  if (string === '') {
+    return {}
+  }
+  for (i=0; i<array.length; i++) {
+    if (count[array[i]] === undefined) {
+     count[array[i]] = 1
+    } else {
+        count[array[i]] += 1
+    }
+  }
+  return count;
+}
+
+var result1 = countAllCharacters('banana');
+console.log('should log "{b: 1, a: 3, n: 2}":', result1);
+
+var result2 = countAllCharacters('');
+console.log('should log "{}":', result2);
 
 
 
