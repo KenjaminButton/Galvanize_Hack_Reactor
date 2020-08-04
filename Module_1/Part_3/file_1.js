@@ -315,12 +315,46 @@ var obj = {
 removeOddValues(obj);
 console.log(obj); // --> { a: 2, c: 4 }
 
+console.log("Array Methods 9:")
+console.log("1:")
+
+function filterOddLengthWords(words) {
+  // Create a results array;
+  // Iterate over each word
+    // if the length of each word is odd
+      // push to results array
+  // Return results array;
+  var results = [];
+  for (i=0; i<words.length; i++) {
+    if (words[i].length % 2 !== 0) {
+      results.push(words[i])
+    }
+  }
+  return results;
+}
+
+var output = filterOddLengthWords(['there', 'it', 'is', 'now']);
+console.log(output); // --> ['there', "now']
 
 
 
+function filterEvenLengthWords(words) {
+  // Create a results array;
+  // Iterate over each word
+    // if the length of each word is even
+      // push to results array
+  // Return results array;
+  var results = [];
+  for (i=0; i<words.length; i++) {
+    if (words[i].length % 2 === 0) {
+      results.push(words[i])
+    }
+  }
+  return results;
+}
 
-
-
+var output = filterEvenLengthWords(['word', 'words', 'word', 'words']);
+console.log(output); // --> ['word', 'word']
 
 
 
