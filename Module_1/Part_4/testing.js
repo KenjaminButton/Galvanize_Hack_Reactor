@@ -1,93 +1,48 @@
-console.log("Objects 9:")
-console.log("1:")
-
+console.log("Advanced 5:")
 /*
-Write a function called "getOddLengthWordsAtProperty".
-Given an object and a key, "getOddLengthWordsAtProperty" returns an array containing all the odd length word elements of the array located at the given key.
+Given a number, "sumDigits" returns the sum of all its digits.
+If the number is negative, the first digit should count as negative.
+
 Notes:
-If the array is empty, it should return an empty array.
-If it contains no odd length elements, it should return an empty array.
-If the property at the given key is not an array, it should return an empty array.
-If there is no property at the given key, it should return an empty array.
+In order to use some of the methods that will be most helpful to you,
+you will most likely want to do some string to number conversion
+and vice versa.
+Be sure to familiarize yourself with the "toString" method, as well
+as the "Number" function.
 */
 
-function getOddLengthWordsAtProperty(obj, key) {
-  var results = []
+function sumDigits(num) {
+  // num to string
+  // split string
+  // create a results variable
+  // iterate through string
+    // add to results
+  // return results
+  var isNegative = false;  
+  if (num < 0) {
+    isNegative = true
+  }
+  num = Math.abs(num)
 
-  if (obj[key] === undefined) {
-    return results
+  var sum = 0;
+  var numToString = num.toString();
+
+
+  for (var i=0; i<numToString.length; i++) {
+    sum += Number(numToString[i])
   }
 
-  if (Array.isArray(obj[key]) === false) {
-    return results
+  if (isNegative === true) {
+    return sum -= Number(numToString[0] * 2)
   }
-
-  for (i=0; i<obj[key].length; i++) {
-    if ((obj[key][i].length) % 2 === 1) {
-      results.push(obj[key][i])
-    }
-  }
-  return results
+  return sum;
 }
 
-var obj = {
-  key: ['It', 'has', 'some', 'words']
-};
-var output = getOddLengthWordsAtProperty(obj, 'key');
-console.log(output); // --> ['has', 'words']
-
-console.log("2:")
-
-/*
-Write a function called "getAverageOfElementsAtProperty".
-Given an object and a key, "getAverageOfElementsAtProperty" returns the average of all the elements in the array located at the given key.
-Notes:
-If the array at the given key is empty, it should return 0.
-If the property at the given key is not an array, it should return 0.
-If there is no property at the given key, it should return 0.
-*/
-
-
-function getAverageOfElementsAtProperty(obj, key) {
-  var average = 0
-  var sum_total = 0
-  var 
-  for () {
-
-  }
-  return average;
-}
-
-var obj = {
-  key: [1, 2, 3]
-};
-var output = getAverageOfElementsAtProperty(obj, 'key');
+var output = sumDigits(11);
 console.log(output); // --> 2
 
-console.log("3:")
+var output = sumDigits(1148);
+console.log(output); // --> 14
 
-/*
-Write a function called "getEvenLengthWordsAtProperty".
-Given an object and a key, "getEvenLengthWordsAtProperty" returns an array containing all the even length word elements of the array located at the given key.
-Notes:
-If the array is empty, it should return an empty array.
-If it contains no even length elements, it should return an empty array.
-If the property at the given key is not an array, it should return an empty array.
-If there is no property at the key, it should return an empty array.
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var output = sumDigits(-316);
+console.log(output); // --> 4
