@@ -1,48 +1,20 @@
-console.log("Advanced 5:")
-/*
-Given a number, "sumDigits" returns the sum of all its digits.
-If the number is negative, the first digit should count as negative.
-
-Notes:
-In order to use some of the methods that will be most helpful to you,
-you will most likely want to do some string to number conversion
-and vice versa.
-Be sure to familiarize yourself with the "toString" method, as well
-as the "Number" function.
-*/
-
-function sumDigits(num) {
-  // num to string
-  // split string
-  // create a results variable
-  // iterate through string
-    // add to results
-  // return results
-  var isNegative = false;  
-  if (num < 0) {
-    isNegative = true
-  }
-  num = Math.abs(num)
-
-  var sum = 0;
-  var numToString = num.toString();
-
-
-  for (var i=0; i<numToString.length; i++) {
-    sum += Number(numToString[i])
-  }
-
-  if (isNegative === true) {
-    return sum -= Number(numToString[0] * 2)
-  }
-  return sum;
+// FUNCTION DEFINITION(S)
+function addOne(val) {
+  return val + 1;
 }
 
-var output = sumDigits(11);
-console.log(output); // --> 2
+// ASSERTION FUNCTION(S) TO BE USED
+function assert(condition, testName) {
+  if (condition) {
+    console.log('passed');
+  } else {
+    console.log('FAILED [' + testName + ']');
+  }
+}
 
-var output = sumDigits(1148);
-console.log(output); // --> 14
+// TESTS FOR isOne
+var result1 = addOne(1);
+assert(result1 === 2, 'should return result of a positive input number added to 1');
 
-var output = sumDigits(-316);
-console.log(output); // --> 4
+var result2 = addOne(-2);
+assert(result2 === 1, 'should return result of a negative input number added to 1');
