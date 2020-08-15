@@ -51,3 +51,13 @@ assert(result1 === 2, 'should return result of a positive input number added to 
 
 var result2 = addOne(-2);
 assert(result2 === 1, 'should return result of a negative input number added to 1');
+
+
+
+
+
+
+
+
+
+
