@@ -1,4 +1,72 @@
 console.log("\n")
+console.log("#1: Convert Array to Object 1")
+
+function transformFirstAndLast(array) {
+  var result = {};
+  var lastElement = array[array.length-1]
+  result[array[0]] = lastElement
+  return result;
+}
+
+console.log(transformFirstAndLast(['Kevin', 'Bacon', 'Love', 'Hart', 'Costner', 'Coleman']
+))
+
+
+console.log("\n")
+console.log("#2: Convert Object to Array")
+var input = {
+  name : 'Sam',
+  age : 25,
+  hasPets : true
+};
+
+var output = ['name', 'age', 'hasPets']
+
+function getAllKeys(obj) {
+  // create an empty results array
+  // run a for in loop for the object
+    // push keys into results array
+  // return results array
+  var results = [];
+  for (var key in obj) {
+    results.push(key)
+  }
+  return results;
+}
+
+console.log(getAllKeys(input))
+
+console.log("\n")
+console.log("#3: Convert Object to Array 2")
+
+var input = [['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]];
+
+
+var output = {
+  make : 'Ford',
+  model : 'Mustang',
+  year : 1964
+}
+
+function transformArrayToObject(array) {
+  var results = {}
+  // iterate over outer array
+    // iterate over inner array
+        // set results' first element to key, second element to value
+  for (var i=0; i<array.length; i++) {
+    for (var j=1; j<array[i].length; j++) {
+      results[array[i][j-1]] = array[i][j]
+    }
+  }
+
+  return results
+}
+
+console.log(transformArrayToObject(input))
+
+
+
+console.log("\n")
 console.log("#4: Convert Array to Object")
 
 function listAllValues(obj) {

@@ -27,12 +27,12 @@ function sumDigits(num) {
   var numToString = num.toString();
   var sum = 0;
   for (var i=0; i<numToString.length; i++) {
-    // var stringToNum = numToString[i].toNumber()
-    // sum += stringToNum
-    if (numToString[0] === '-') {
-      return "What do I do now?"
+    if (numToString[i] === "-") {
+      sum -= Number(numToString[i + 1]);
+      // shifting i
+      i += 2
     }
-    var currentElement = parseInt(numToString[i])
+    var currentElement = Number(numToString[i])
     sum += currentElement
   }
   return sum
@@ -41,3 +41,8 @@ function sumDigits(num) {
 
 console.log(sumDigits(1148))
 console.log(sumDigits(-316))
+
+
+
+
+
