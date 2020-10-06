@@ -1,48 +1,39 @@
-
-console.log("\n")
-console.log("#15: Sum Digits")
+console.log("\nLast One");
+console.log("#3: Extract a Domain Name"); 
 
 /*
-Write a function called "sumDigits".
-Given a number, "sumDigits" returns the sum of all its digits.
+Write a function that when given a URL as a string, parses out just
+the domain name and returns it as a string. For example:
 
-var output = sumDigits(1148);
-console.log(output); // --> 14
-
-If the number is negative, the first digit should count as negative.
-
-var output = sumDigits(-316);
-console.log(output); // --> 4
-
-Notes:
-In order to use some of the methods that will be most helpful to you, you
-will most likely want to do some string to number conversion and vice versa.
-Be sure to familiarize yourself with the "toString" method, as well
-as the "Number" function.
-
+Input1: "http://github.com/carbonfive/raygun  " Output1: "github"
+Input2: "http://www.zombie-bites.com  " Output2: "zombie-bites"
+Input3: "https://www.cnet.com  " Output3: "cnet"
 */
 
+// function getDomain(url) {
+//   var splitWord = '^h'
+//   return splitWord
+// }
 
-function sumDigits(num) {
-  var numToString = num.toString();
-  var sum = 0;
-  for (var i=0; i<numToString.length; i++) {
-    if (numToString[i] === "-") {
-      sum -= Number(numToString[i + 1]);
-      // shifting i
-      i += 2
-    }
-    var currentElement = Number(numToString[i])
-    sum += currentElement
-  }
-  return sum
+
+function getDomain(url){
+  url = url.replace("https://", "")
+  url = url.replace("http://", "")
+  url = url.replace("www.", "")
+  var splitString = url.split(".")
+  // console.log(splitString);
+  return splitString[0]
 }
 
+var test1 = "https://www.google.com/"
+console.log(getDomain(test1));
 
-console.log(sumDigits(1148))
-console.log(sumDigits(-316))
+var test2 = "http://www.zombie-bites.com  "  
+console.log(getDomain(test2));
+// "zombie-bites"
 
+var test3 = "https://www.cnet.com  " 
+console.log(getDomain(test3));
 
-
-
-
+var test4 =  "http://github.com/carbonfive/raygun  "
+console.log(getDomain(test4));
